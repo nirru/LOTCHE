@@ -1,0 +1,78 @@
+<ion-view side-menu-active="true" view-title="{{productlist.pageTitle}}">
+
+    <ion-nav-buttons side="left">
+      <button class="button button-icon app-icon icon-menu button-dark" menu-toggle="left"></button>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+
+  <ion-header-bar class="bar-subheader">
+    <ion-scroll  direction="x" class="wide-as-needed" delegate-handle="small">
+      <nav id="primary_nav_wrap">
+      <ul class="family-icon-scroller">
+        <li ng-repeat="category in productlist.categories track by $index"  id="{{category.id}}" ng-class="{'selected': productlist.D($index)}" ng-click="productlist.navigateToCategory(category,$event,$index)" >
+          {{category.title}}
+        </li>
+      </ul>
+      </nav>
+    </ion-scroll>
+  </ion-header-bar>
+
+    <ion-content scroll="false"  class="products-content">
+        <ion-scroll  style="margin-top: 60px" loader-pane="productlist.productRequest" loader-pane-empty-message="productlist.noProductsText" class="slideContent hide-onscroll-content" lazy-scroll="" overflow-scroll="true">
+          <div class="shippingCountryInfoDiv">
+            <span class="shippingCountryInfo" align-title="center" ng-show="true" > {{productlist.globalCountry}} </span>
+          </div>
+
+          <div class="list product-list" ng-class="{'gridview': productlist.viewOptions.viewMode == 'gridview', 'listview': productlist.viewOptions.viewMode == 'listview'}" ng-if="!productlist.productsLoading || productlist.infiniteLoading">
+            <div class="product-item" ng-repeat="product in productlist.products | limitTo:productlist.limit track by product.id " >
+              <div class="image animated item-avatar" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{::product.image}}" image-lazy-distance-from-bottom-to-load="300" ng-click="productlist.navigateToProductDetails(product)">
+                <button ng-if="::productlist.allowRemoveProducts" class="button wishlist-remove button-small button-delete round-button icon ion-trash-a" ng-click="::productlist.removeFromWishlist(product.id); $event.stopPropagation();"></button>
+              </div>
+              <div class="brand one-line-label" ng-show="productlist.viewOptions.displayVendor">
+                {{::product.vendor}}
+              </div>
+              <div class="name one-line-label">
+                {{::product.title}}
+              </div>
+              <!--<div class="price" ng-bind-html="::product.price | currencyFormatter : productlist.viewOptions.currency">-->
+              <!--</div>-->
+
+              <div class="prices-block">
+                <span class="price" ng-bind-html="::product.price | currencyFormatter : productlist.viewOptions.currency"></span>
+                <span ng-show="product.salePrice && product.price != product.salePrice" class="wholesale-price" ng-bind-html="::product.salePrice | currencyFormatter : productlist.viewOptions.currency"></span>
+
+              </div>
+
+              <div class = "row">
+                <div class="col col-33">
+
+                </div>
+                <div class="col col-33">
+                  <button class="button button-icon app-icon icon-heart toggle-wishlist" ng-class="{'switched-on': productlist.C($index,product)}" ng-click="productlist.B(product.id,product,$index)"></button>
+                </div>
+                <div class="col col-33 prices-block">
+                  <!--<span class="price" ng-bind-html="::product.price | currencyFormatter : productlist.viewOptions.currency"></span>-->
+                  <!--<span ng-show="product.salePrice && product.price != product.salePrice" class="wholesale-price" ng-bind-html="::product.salePrice | currencyFormatter : productlist.viewOptions.currency"></span>-->
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <ion-infinite-scroll ng-if="!productlist.noMoreProducts && (!productlist.productsLoading || productlist.infiniteLoading)" on-infinite="productlist.loadMoreProducts()" spinner="{{ ::productlist.isAndroid() ? 'crescent' : 'lines' }}" immediate-check="false" distance="1%">
+          </ion-infinite-scroll>
+        </ion-scroll>
+      <div class="bar bar-footer hide-down" ng-show="productlist.products.length > 0" ng-if="::productlist.hasOptionBar">
+
+            <button class="button button-icon app-icon pull-right" ng-class="{'icon-gridview': productlist.viewOptions.viewMode == 'gridview', 'icon-listview': productlist.viewOptions.viewMode == 'listview'}" ng-click="::productlist.toggleViewMode()">
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

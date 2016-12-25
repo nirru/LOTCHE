@@ -1,0 +1,10 @@
+<div class="list">
+  <label class="item item-input item-select" ng-repeat="option in ::product.options | orderBy: 'position'">
+    <div class="input-label attribute">
+      {{::option.title}}
+    </div>
+    <select class="attribute"  ng-model="option.selectedValue" ng-change="optionChanged()">
+      <option ng-repeat="value in ::option.values">{{::value}}</option>
+    </select>
+  </label>
+</div>

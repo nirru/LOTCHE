@@ -1,0 +1,21 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <!-- Center content -->
+    <ion-side-menu-content>
+
+        <ion-nav-bar class="bar-positive" align-title="center">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon app-icon icon-menu button-dark" menu-toggle="left"></button>
+            </ion-nav-buttons>
+             <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>
+
+        <ion-nav-view name="viewContent">
+
+        </ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left" class="side-menu" is-enabled='sideMenu.active'>
+        <div ng-controller="MenuController as menuCtrl" class="menu-wrapper" ng-include="menu.url"></div>
+    </ion-side-menu>
+</ion-side-menus>

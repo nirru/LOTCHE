@@ -1,0 +1,22 @@
+<div class="menu-top">
+	<div class="logo"></div>
+</div>
+<div class="menu-list">    
+    <div class="list centered">
+          <a class="item" href="#" ui-sref-active="active" ui-sref="app.home" menu-close-no-root="true">
+            {{ ::'menu.home' | translate}}
+          </a>
+          <a class="item" href="#" ui-sref-active="active" ui-sref="app.shopping_cart" menu-close-no-root="true">
+            <span>{{ ::'menu.myCart' | translate}}<div class="round-badge item-badge" ng-if="menuCtrl.cart.items.length > 0">{{menuCtrl.getItemCount()}}</div></span>            
+            
+          </a>
+          <a class="item" href="#" ui-sref-active="active" ui-sref="app.wishlist({viewType:'wishlist'})" menu-close-no-root="true">
+            {{ ::'menu.wishlist' | translate}}
+          </a>          
+          <a class="item" href="#" ui-sref-active="active" ui-sref="app.about" menu-close-no-root="true">
+            {{ ::'menu.about' | translate}}
+          </a>         
+        </div>
+    
+</div>    
+<div class="menu-bottom"></div>

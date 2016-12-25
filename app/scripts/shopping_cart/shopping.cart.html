@@ -1,0 +1,32 @@
+<ion-view side-menu-active="false" view-title="{{ 'cart.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content loader-pane="cart.cartRequest" loader-pane-empty-message="::cart.emptyCartMessage" loader-pane-show-spinner="cart.showSpinner" lazy-scroll="" overflow-scroll="true" class="has-footer">
+        <div class="cart-item flex-horizontal" ng-repeat="item in cart.items track by item.id">
+            <div class="image animated" image-lazy-background-image="true" image-lazy-loaded-class="fadeIn" image-lazy-src="{{::item.image}}"></div>
+            <div class="flex-vertical-spread details">
+                <div class="product-title two-line-label">{{::item.title}}</div>
+                <div class="variations two-line-label">{{::item.variantDescription}}</div>
+                <div class="price">
+                    <div ng-if="cart.hasSalePrice(item)" ng-class="{'on-sale': cart.hasSalePrice(item)}" class="sale-price" ng-bind-html="::item.salePrice | currencyFormatter : cart.currency"></div>
+                    <div class="base-price" ng-class="{'on-sale': cart.hasSalePrice(item)}" ng-bind-html="::item.price | currencyFormatter : cart.currency"></div>
+                </div>
+            </div>
+            <div class="flex-vertical-spread quantity">
+                <a class="button button-block button-small button-icon icon ion-plus-round" ng-click="cart.incrementItem(item)"></a>
+                <span class="count" ng-if="cart.updatingItemId !== item.id">{{item.quantity}}</span>
+                <ion-spinner class="countSpinner" ng-if="cart.updatingItemId === item.id"></ion-spinner>
+                <a class="button button-block button-small button-icon icon ion-minus-round" ng-click="cart.decrementItem(item)"></a>
+            </div>
+            <div class="delete">
+                <button class="button button-delete round-button icon ion-trash-a" button-spinner="{{cart.deletingItemId === item.id}}" button-spinner-delay="500" ng-click="cart.removeItem(item)"></button>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-checkout" ng-if="cart.hasCart">
+        <div class="total" ng-bind-html="cart.total | currencyFormatter : cart.currency"></div>
+        <button class="button button-clear icon-right ion-ios-arrow-forward pull-right" ng-click="cart.gotoCheckout()" button-spinner="{{cart.checkingOut}}">{{::'cart.checkout' | translate}} &nbsp;</button>
+    </ion-footer-bar>
+</ion-view>

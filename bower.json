@@ -1,0 +1,31 @@
+{
+  "name": "lotche",
+  "author": "Adnan Al Dibis",
+  "private": "true",
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "~1.5.8",
+    "ngCordova": "~0.1.23-alpha",
+    "angular-resource": "~1.4.8",
+    "ionic": "~1.2.1",
+    "ionic-image-lazy-load": "https://github.com/armenbadalyan/ionic-image-lazy-load.git",
+    "animate.css": "~3.5.1",
+    "IonicSlideBoxTabs": "https://github.com/armenbadalyan/ion-slide-box-tabs.git",
+    "ionic-scroll-sista": "~1.0.7",
+    "ionic-filter-bar": "https://github.com/armenbadalyan/ionic-filter-bar.git#master",
+    "ngstorage": "~0.3.10",
+    "lodash": "~3.10.0",
+    "angular-translate": "~2.11.0",
+    "angular-translate-loader-static-files": "~2.11.0"
+  },
+  "resolutions": {
+    "angular": "~1.5.8"
+  },
+  "overrides": {
+    "ionic-filter-bar": {
+      "main": [
+        "dist/ionic.filter.bar.js"
+      ]
+    }
+  }
+}

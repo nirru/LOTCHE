@@ -1,0 +1,104 @@
+.cart-item {
+
+	padding: 10px 0;
+	border-bottom: 1px solid $list-border-color;
+	height: 110px;
+
+	> .image {
+		flex: 0 0 90px;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: 50% 50%, center;
+		background-size: contain;
+		margin: 0 5px;
+	}
+
+	> .details {
+		font-size: 12px;
+		flex: 1 auto;
+		height: 100%;
+
+		.product-title {
+			font-weight: 500;
+		}
+
+		.variations {
+			line-height: 1em;
+			color: $text-color-light;
+		}
+
+		.price {
+			font-size: 13px;
+			line-height: 1em;
+			font-weight: 500;
+
+			.base-price {
+				color: $price-font-color;
+
+				&.on-sale {
+					color: $text-color-light;
+					font-size: 12px;
+					text-decoration: line-through;
+				}
+			}
+
+			.sale-price {
+				color: $alternative-color;
+			}
+		}
+	}
+	> .quantity {
+		flex: 0 0 auto;
+		height: 100%;
+		margin-left: 5px;
+		a.button {
+			margin: 0;
+		}
+		a.button:before {
+			font-size: 12px;
+		}
+		.count {
+			font-size: 14px;
+			font-weight: 500;
+			text-align: center;
+			margin-top: 5px;
+			margin-bottom: 7px;
+			display:block;
+
+		}
+		.countSpinner {
+			margin-top: 5px;
+			margin-bottom: 7px;
+			width: 20px;
+			height: 20px;
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	>.delete {
+		flex: 0 0 auto;
+		padding: 0 5px;
+	}
+}
+
+.total {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    /* text-align: center; */
+    line-height: $bar-height;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.cart-badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 12px;
+    font-weight: 500;
+}

@@ -1,0 +1,32 @@
+<ion-view view-title="{{'about.title' | translate}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+    	<div class="about-section logo-section"><div class="logo"></div></div>
+    	<div class="about-section"><div class="section-title">{{::'about.aboutUs' | translate}}</div><div>{{::'about.aboutText' | translate}}</div></div>
+    	<div class="about-section"><div class="section-title">{{::'about.contacts' | translate}}</div>
+    		<a href="tel:{{about.phone}}" class="contact-item flex-horizontal">
+    			<span class="icon app-icon icon-phone"></span>
+    			<div class="content"><div class="contact-item-label">{{::'about.phone' | translate}}</div><div class="contact-item-value link">{{about.phone}}</div></div>
+    		</a>
+    		<a href="mailto:{{about.email}}" class="contact-item flex-horizontal">
+    			<span class="icon app-icon icon-mail"></span>
+    			<div class="content"><div class="contact-item-label">{{::'about.email' | translate}}</div><div class="contact-item-value link">{{about.email}}</div></div>
+    		</a>
+    		<a href="#" class="contact-item flex-horizontal" ng-click="about.navigateToSite($event, about.website)">
+    			<span class="icon app-icon icon-globe"></span>
+    			<div class="content"><div class="contact-item-label">{{::'about.website' | translate}}</div><div class="contact-item-value link">{{about.website}}</div></div>
+    		</a>
+    		<a class="contact-item flex-horizontal" ng-click="about.navigateToMaps(about.address)">
+    			<span class="icon app-icon icon-house"></span>
+    			<div class="content"><div class="contact-item-label">{{::'about.address' | translate}}</div><div class="contact-item-value">{{about.address}}</div></div>
+    		</a>
+    	</div>
+    </ion-content>
+</ion-view>

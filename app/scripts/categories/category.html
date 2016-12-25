@@ -1,0 +1,17 @@
+<ion-view side-menu-active="false" view-title="{{category.current.title}}">
+    <ion-nav-buttons side="left">
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+    	 <div class="list centered">
+          <a ng-repeat="item in category.items track by $index" class="item" ng-click="category.navigateToCategory(item)">
+            {{::item.title}}
+          </a>
+        </div>
+    </ion-content>
+</ion-view>

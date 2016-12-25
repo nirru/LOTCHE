@@ -1,0 +1,52 @@
+//Theme colors. For more detailed configuration edit "_variables.scss"
+
+//main
+$main-color: #c23c30;
+$alternative-color: #efefef;
+$details-color:#f16f26;
+$background-color:#fff;
+$header-color:$main-color;
+$header-divider-color:$header-color;
+
+$text-color-main: #575757;
+$text-color-light: lighten($text-color-main, 17%);
+$text-color-attention: #FD7577;
+
+//home page
+$list-item-color: #575757;
+$list-item-active-background: $alternative-color;
+
+//products
+$active-tab-text-color:#2b363a;
+$passive-tab-text-color:#95989a;
+$grid-border-color:#f5f5f5;
+$sliding-tabs-background-color:#fff;
+$list-border-color:#f5f5f5;
+$badge-bg: $details-color;
+
+//side menu
+$side-menu-link-color:#fff;
+$side-menu-link-color-active:#ffc8a8;
+$side-menu-background-color:#2a7fb8;
+
+//wishlist
+$button-delete-bg: $details-color;
+$button-delete-text: #fff;
+
+//product details
+$fav-button-off: #7F7F7F;
+$fav-button-on: #d35427;
+$header-icons-color:$fav-button-off;
+$slider-bullet-color:$alternative-color;
+$slider-bullet-active-color:$main-color;
+$add-to-cart-block-background-color: $side-menu-background-color;
+$product-title-color:$text-color-main;
+$price-font-color: $fav-button-on;
+$show-more-font-color:$fav-button-on;
+$product-description-font-color:$text-color-light;
+$options-font-color:$text-color-main;
+$attributes-border-color:darken($grid-border-color, 5%);
+
+//cart
+$price-color:$details-color;
+$bar-checkout-bg: $details-color;

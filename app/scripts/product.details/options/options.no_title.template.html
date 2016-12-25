@@ -1,0 +1,8 @@
+<div class="list option-without-title">
+  <label class="item item-input item-select sort-select select-center select-auto-width">
+    <select class="attribute"  ng-model="product.options[0].selectedValue" ng-change="optionChanged()">
+      <option ng-repeat="value in ::product.options[0].values">{{::value}}</option>
+    </select>
+  </label>
+</div>
+

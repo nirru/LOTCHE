@@ -1,0 +1,67 @@
+<ion-view side-menu-active="true" view-title="" nav-bar-transparent="true" text-theme="dark">
+    <ion-nav-buttons side="left">
+
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <!--<span style="font-size: 12px; margin:-7px;" align-title="center" class=" header-item"> {{productdetails.globalCountry}} </span>-->
+        <button class="button button-icon app-icon icon-search" search-button>
+        </button>
+        <button class="button button-icon app-icon icon-cart" ui-sref="app.shopping_cart" cart-button>
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="no-header">
+        <ion-spinner class="centered-spinner" ng-if="productdetails.isLoading">
+        </ion-spinner>
+        <div class="product-details">
+            <div class="slider-container">
+                <button class="button button-icon app-icon icon-heart toggle-wishlist" ng-class="{'switched-on': productdetails.viewData.isFavorite}" ng-click="productdetails.toggleFavorite(productdetails.viewData.product)"></button>
+                <ion-slides slider="data.slider" class="slides" options="productdetails.viewData.swiperOptions">
+                    <ion-slide-page ng-repeat="image in productdetails.viewData.product.images">
+                        <div class="image animated" style="background-image:url('{{::image.src}}')" ></div>
+                    </ion-slide-page>
+                </ion-slides>
+            </div>
+            <hr class="divider"/>
+          <div  class="text_shipping" >
+            {{productdetails.globalCountry}}
+          </div>
+          <div class="attributes" product-options option-changed="productdetails.optionChanged()" product="productdetails.viewData.product">
+          </div>
+            <div class="flex-horizontal middle-block">
+                <div class="flex-horizontal quantity" ng-if="!productdetails.isSoldOut()">
+                    <div class="minus">
+                        <button class="button button-icon ion-minus" ng-disabled="productdetails.viewData.quantity == 1" ng-click="productdetails.decrementQuantity()">
+                        </button>
+                    </div>
+                    <div class="number">
+                        {{productdetails.viewData.quantity}}
+                    </div>
+                    <div class="plus">
+                        <button class="button button-icon ion-plus" ng-disabled="productdetails.viewData.variant.isQuantitySpecified && productdetails.viewData.quantity === productdetails.viewData.variant.quantity" ng-click="productdetails.incrementQuantity()">
+                        </button>
+                    </div>
+                </div>
+                <div class="border-helper" ng-if="!productdetails.isSoldOut()"></div>
+                <div class="add-to-cart">
+                    <button class="button icon-right button-icon app-icon icon-cart-add" ng-click="productdetails.addToCart()" ng-disabled="productdetails.isSoldOut()" button-spinner="{{productdetails.viewData.addingProductToCart}}" button-spinner-delay="500" button-spinner-min-time="1000" ng-disabled="productdetails.viewData.addingProductToCart">{{productdetails.isSoldOut() ? 'productDetails.soldOut' : 'productDetails.addToCart' | translate}}</button>
+                </div>
+            </div>
+
+            <div class="description">
+                <div class="title-and-price">
+                    <div class="title two-line-label">
+                        {{::productdetails.viewData.product.title}}
+                    </div>
+                    <div class="prices-block">
+                        <span class="price" ng-bind-html="::productdetails.viewData.variant.price | currencyFormatter : productdetails.viewData.currency"></span>
+                        <span ng-show="productdetails.viewData.product.salePrice && productdetails.viewData.product.price != productdetails.viewData.product.salePrice" class="wholesale-price" ng-bind-html="::productdetails.viewData.variant.salePrice | currencyFormatter : productdetails.viewData.currency"></span>
+                    </div>
+                </div>
+                <div class="text show-more" ng-bind-html="::productdetails.viewData.descriptionText" show-more-label="{{::'common.showMore' | translate }}" show-less-label="{{::'common.showLess' | translate }}" max-lines="5">
+                </div>
+            </div>
+            <!--<div class="attributes" product-options option-changed="productdetails.optionChanged()" product="productdetails.viewData.product">-->
+            <!--</div>-->
+        </div>
+    </ion-content>
+</ion-view>

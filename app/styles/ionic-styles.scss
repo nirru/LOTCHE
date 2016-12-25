@@ -1,0 +1,59 @@
+/**
+ * Override Ionic variables here
+ *
+ * e.g. $positive:  #387ef5 !default;
+ */
+
+ $item-padding: 14px;
+ $item-font-size: 12px;
+ $base-color: $text-color-main;
+ $button-stable-text: $text-color-main;
+
+ $dark: $bar-background;
+ $button-dark-text: $bar-text;
+ $button-dark-active-border: $bar-active-border;
+ $button-dark-border: $header-divider-color;
+// Include all of Ionic for compilation
+@import 'bower_components/ionic/scss/ionic';
+
+
+ $bar-dark-text:                   $button-dark-text !default;
+ $bar-dark-border:                 $button-dark-border !default;
+
+
+button.button-delete {
+    @include button-style($button-delete-bg, $button-delete-border, $button-delete-active-bg, $button-delete-active-border, $button-delete-text);
+    @include button-clear($button-delete-bg);
+    @include button-outline($button-delete-bg);
+}
+
+button.button-transparent {
+    @include button-style($button-transparent-bg, $button-transparent-border, $button-transparent-active-bg, $button-transparent-active-border, $button-transparent-text);
+    @include button-clear($button-transparent-bg);
+    @include button-outline($button-transparent-bg);
+}
+
+.bar.bar-checkout {
+    @include bar-style($bar-checkout-bg, $bar-checkout-border, $bar-checkout-text);
+    &.bar-footer{
+      background-image: linear-gradient(180deg, $bar-checkout-border, $bar-checkout-border 50%, transparent 50%);
+    }
+}
+.bar-checkout {
+  .button {
+    @include button-style($bar-checkout-bg, $bar-checkout-border, $bar-checkout-active-bg, $bar-checkout-active-border, $bar-checkout-text);
+    @include button-clear(#fff, $bar-title-font-size);
+  }
+}
+
+
+.bar
+{
+  >.title
+  {
+    font-weight: $font-weight;
+  }
+}
+.platform-android .filter-bar .filter-bar-dark .item-input-inset .item-input-wrapper {
+  border-bottom: none;
+};

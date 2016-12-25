@@ -1,0 +1,66 @@
+// Variables
+
+@import "themes/<%= THEME %>";
+
+/**
+ * Define variables here
+ */
+
+// default bar styles
+$bar-background: $header-color;
+$bar-border: $main-color;
+$bar-active-border: #EEDFD8;
+$bar-text: #FFF;
+$dark-bar-text: $main-color;
+
+// delete button styles
+$button-delete-border: darken($button-delete-bg, 10%);
+$button-delete-active-bg: darken($button-delete-bg, 10%);
+$button-delete-active-border: darken($button-delete-bg, 10%);
+
+// checkout bar
+$bar-checkout-border: darken($bar-checkout-bg, 10%);
+$bar-checkout-active-bg: darken($bar-checkout-bg, 10%);
+$bar-checkout-active-border: darken($bar-checkout-bg, 10%);
+$bar-checkout-text: #FFF;
+
+// badge color
+$badge-text: #FFF;
+
+// home blocks
+$button-transparent-bg: rgba(0,0,0,.35);
+$button-transparent-border: #fff;
+$button-transparent-text: #fff;
+$button-transparent-active-bg: rgba(0,0,0,.5);
+$button-transparent-active-border: $button-transparent-border;
+$block-content-highlight-bg: rgba(0,0,0,.3);
+
+$menu-bg: $main-color;
+
+$menu-list-item-font-size: 22px;
+$menu-list-item-line-height: 40px;
+$menu-list-item-color: #EEDFD8;
+$menu-list-item-color-active: #Ff5CDA1;
+
+//$navbar-background: $maincolor;
+$navbar-text-color: #FFF;
+
+//$slidingtabsheight
+$tab-text-size: 12px !default;
+$tab-text-transform: uppercase !default;
+$tab-text-font-weight: 500 !default;
+
+$spinner-width: 30px;
+$bar-height: 44px;
+$ios-statusbar-height: 20px;
+
+//product-details
+$middle-block-font-color: #FFF;
+$middle-block-font-size: 14px;
+$middle-block-divider-color: #D7D7D7;
+$price-font-size: 20px;
+$wholesale-price-font-color: #848484;
+$wholesale-price-font-size: 13px;
+$header-elements-shadow: 0px 0px 3px rgba(150, 150, 150, 1);
+
+$font-weight: 200;

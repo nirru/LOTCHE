@@ -1,0 +1,209 @@
+.platform-ios.platform-cordova:not(.fullscreen) .no-header {
+	top: 0 !important;
+}
+
+.centered-spinner {
+	width: $spinner-width;
+	height: $spinner-width;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -$spinner-width/2;
+	margin-left: -$spinner-width/2;
+  	z-index: 100;
+}
+
+.item-select  {
+	select {
+		color: $list-item-color;
+  	}
+  	&:after {
+  		color: $list-item-color;
+  	}
+}
+
+.list.centered {
+	text-align: center;
+	.item {
+		text-transform: uppercase;
+		color: $list-item-color;
+		font-weight: 500;
+		border-color: $list-border-color;
+		letter-spacing: 1px;
+	}
+
+	.item:first-child {
+		border-top: none;
+	}
+
+	.item:last-child {
+		border-bottom: none;
+	}
+
+	.item.active, .item.activated {
+		background-color: $list-item-active-background;
+	}
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.nav-bar-block {
+	ion-header-bar.bar {
+		//background-color: $navbar-background !important;
+		//background-image: linear-gradient(0deg, $navbar-background, $navbar-background 50%, transparent 50%);
+		border: none;
+		color: $bar-text;
+
+		button {
+			color: $bar-text;
+		}
+	}
+}
+
+.slidingTabs {
+  > .scroll {
+    ul {
+      background-color: $sliding-tabs-background-color;
+
+      li.tab-active {
+        color: $active-tab-text-color;
+        background-color: $sliding-tabs-background-color;
+      }
+
+      li {
+        color: $passive-tab-text-color;
+      }
+    }
+  }
+}
+
+.slider-slide {
+	background-color: $background-color;
+}
+
+.slideContent {
+	height: 100%;
+}
+
+.one-line-label {
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+.two-line-label {
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 2.2em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	line-height: 1.1em;
+}
+
+.round-button {
+	font-size: 20px;
+	border-radius: 1.5em;
+	min-width: 1.5em;
+	min-height: 1.5em;
+}
+
+
+.modal.search-panel {
+	top: $bar-height;
+	bottom:0;
+	left:0;
+	right:0;
+
+	.platform-ios.platform-cordova:not(.fullscreen) & {
+		top: $bar-height + $ios-statusbar-height;
+	}
+}
+
+.flex-vertical-spread {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+.flex-horizontal {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.missing-text {
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	left: 0;
+	right:0;
+	transform: translateY(-50%);
+	padding: 10px;
+}
+
+.round-badge {
+	background-color: $badge-bg;
+	color: $badge-text;
+	line-height: 0;
+    border-radius: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    padding-top: 0.75em;
+    text-align: center;
+    letter-spacing: normal;
+}
+
+.button.button-positive.button-clear.show-more-button {
+	color:$show-more-font-color;
+    font-size: 12px;
+}
+
+/*
+	Hide unnecessary scroll bars on older Android phones
+ */
+.platform-android .overflow-scroll {
+  overflow-y: auto;
+}
+
+.fade-in-right {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+.fade-in-right.ng-enter, .fade-in-right > .ng-enter {
+  -webkit-transition: -webkit-transform cubic-bezier(.25, .45, .05, 1) 300ms;
+  transition: transform cubic-bezier(.25, .45, .05, 1) 300ms;
+}
+
+.fade-in-right.ng-enter-active, .fade-in-right > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.fade-in-right.ng-leave, .fade-in-right > .ng-leave {
+  -webkit-transition: -webkit-transform cubic-bezier(.25, .45, .05, 1) 300ms;
+  transition: transform cubic-bezier(.25, .45, .05, 1) 300ms;
+}
+
+.fade-in-bottom {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+
+.fade-in-bottom.ng-enter, .fade-in-bottom > .ng-enter {
+  -webkit-transition: -webkit-transform cubic-bezier(.25, .45, .05, 1) 350ms;
+  transition: transform cubic-bezier(.25, .45, .05, 1) 350ms;
+}
+
+.fade-in-bottom.ng-enter-active, .fade-in-bottom > .ng-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.fade-in-bottom.ng-leave, .fade-in-bottom > .ng-leave {
+  -webkit-transition: -webkit-transform cubic-bezier(.25, .45, .05, 1) 350ms;
+  transition: transform cubic-bezier(.25, .45, .05, 1) 350ms;
+}
+

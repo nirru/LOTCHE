@@ -1,0 +1,257 @@
+.product-details {
+
+  height: 100%;
+
+  > .brand {
+    font-weight: 300;
+  }
+
+  > .name {
+    font-weight: 500;
+  }
+
+  > .price {
+    font-weight: 500;
+  }
+
+  > .slider-container
+  {
+    height: 50vh;
+    position: relative;
+
+      > .slides {
+        height: inherit;
+        max-height: 100%;
+
+      > .swiper-container {
+        height: inherit;
+        max-height: 100%;
+      }
+
+      > .swiper-container .swiper-wrapper .swiper-slide {
+        text-align: center;
+
+        .image
+        {
+          background-repeat: no-repeat;
+          background-position: 50% 50%, center;
+          background-size: contain;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          right: 0;
+          bottom: 20px;
+        }
+      }
+
+      > .swiper-container .swiper-pagination {
+        bottom: 0;
+      }
+
+      > .swiper-container .swiper-pagination .swiper-pagination-bullet {
+        width: 7px;
+        height: 7px;
+        background-color: $slider-bullet-color;
+        opacity: 1;
+        margin: 0 3px;
+        border-radius: 50%;
+      }
+
+      > .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
+        width: 7px;
+        height: 7px;
+        background-color: $slider-bullet-active-color;
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+  > .divider {
+    border: none;
+    background-color: $list-border-color;
+    height: 1px;
+  }
+
+  > .middle-block {
+    border-radius: 8px;
+    background-color: $add-to-cart-block-background-color;
+    margin: 15px 20px;
+    font-size:$middle-block-font-size;
+    font-weight: $font-weight;
+
+    .button {
+      color: white;
+      font-size: 14px;
+      font-weight: inherit;
+    }
+
+    > .quantity {
+      height: 100%;
+      width: 100%;
+      font-size:22px;
+      line-height:32px;
+      justify-content: center;
+
+      > .minus {
+        height: 100%;
+      }
+
+      > .number {
+        height: 100%;
+        color: $middle-block-font-color;
+        line-height:43px;
+        padding: 0 25px;
+      }
+      > .plus {
+        height: 100%;
+      }
+    }
+    > .border-helper
+    {
+      width: 1px;
+      height: 2em;
+      border-right: 1px solid $middle-block-divider-color;
+    }
+
+    > .add-to-cart
+    {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      color: $middle-block-font-color;
+
+      button {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  > .description
+  {
+    padding:0 4% 0 4%;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    > .title-and-price
+    {
+      width: 100%;
+      color:$product-title-color;
+
+      display: inline-block;
+      > .title{
+        font-size: 16px;
+        width:60%;
+        float:left;
+      }
+
+      > .prices-block
+      {
+        width:40%;
+        float:right;
+        text-align: right;
+
+        > .price
+        {
+          font-size: $price-font-size;
+          color: $price-font-color;
+          display: block;
+        }
+
+        > .wholesale-price
+        {
+          font-size: $wholesale-price-font-size;
+          color: $wholesale-price-font-color;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    > .text
+    {
+      font-size: 12px;
+      line-height: 18px;
+      display:inline-block;
+      width: 100%;
+      color:$product-description-font-color;
+
+      .show-more-content {
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .show-more-button
+      {
+        float:right;
+      }
+    }
+  }
+
+  > .attributes
+  {
+    margin-top:3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    > .list
+    {
+      > .item
+      {
+        > select
+        {
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+        > .attribute
+        {
+          font-size:12px;
+          color:$options-font-color;
+        }
+      }
+
+      > .select-center
+      {
+        margin:0 auto;
+        padding-left:3%;
+      }
+    }
+
+    > .option-without-title
+    {
+      border-top:1px solid $attributes-border-color;
+      border-bottom:1px solid $attributes-border-color;
+      display: flex;
+      padding: 7px 0 7px 0px;
+    }
+  }
+
+  >.text_shipping
+  {
+    padding-left: 15px;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+
+  button.toggle-wishlist {
+    position: absolute;
+    bottom: 5px;
+    z-index: 2;
+    right: 15px;
+    font-size: 24px;
+    color: $fav-button-off;
+
+    // Give desktop users something to play with
+    &:hover {
+      color: $fav-button-off;
+      text-decoration: none;
+    }
+
+    &.switched-on {
+      color: $fav-button-on;
+    }
+  }
+
+
+}

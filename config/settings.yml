@@ -1,0 +1,61 @@
+#
+#  This is the main configuration file of this MobileFront powered application
+#
+
+# Name of the root navigation menu. In Shopify this is usually main-menu
+# but you can create navigation hierarchy based on any other menu. The items
+# of the root menu will be displayed on the home page.
+root_category:      main-menu
+
+# URL of the backend code deployment
+api_host:           https://hidden-anchorage-25577.herokuapp.com/api
+
+# UI theme of the app. Supported themes can be found in app/styles/themes folder
+theme:              evening
+
+# home_blocks section describes up to three blocks displayed on the home page.
+# A block can be used to promote a certain category of products on the home page.
+ 
+home_blocks:
+
+   # Title of the block
+ - title:             Change me
+   # Subtitle displyed right below the title
+   subtitle:          In config/settings.yml
+   # Text of the action button displayed below subtitle
+   action:            Action
+   # Displays a semi-transparent strip behind title, subtitle and action button
+   # Can improve text visibility
+   highlightContent:  true
+   # Id of the shopify category which this block links to.    
+   # If collection id is specified will navigate to product list page for that collection on tap.
+   # If left empty the block will not navigate anywhere on tap.
+   collection:        
+   # Path to the backgorund image for this block. 
+   # If not set and collection parameter is not empty the app will attempt to load the image form Shopify
+   image:             images/homepage/block1_image.jpg
+   # Horizontal alignment of the block content. Possible values: left, right and center
+   halign:            left
+   # Vertical alignment of the block content. Possible values: top, bottom and middle
+   valign:            bottom
+
+   # Next block
+ - title:             Change me                    
+   subtitle:          In config/settings.yml
+   action:            Action
+   highlightContent:  true
+   collection:        
+   image:             images/homepage/block2_image.jpg
+   halign:            right
+   valign:            bottom
+
+   #Another block could be here
+
+# phone, email and address are specified on the about us page
+phone:              +1-541-754-3010
+email:              sales@example.com
+website:            http://example.com
+address:            4273 Jacobs Street FLEMING ISLAND FL 32003
+
+# Whether the vendor name should be displayed for the items in the product list
+display_vendor:     true

@@ -1,0 +1,44 @@
+/************************************
+ *
+ *  Main Styles to compile. Here only @imports!
+ *
+ ************************************/
+
+@import "_variables";
+@import "_fonts";
+@import "ionic-styles.scss";
+
+/**
+ * LAYOUT
+ */
+
+@import "layout/layout";
+
+
+/**
+ * MENU
+ */
+
+@import "menu/menu";
+
+/**
+ * VIEWS
+ */
+
+@import "views/home";
+@import "views/products";
+@import "views/cart";
+@import "views/product.details";
+@import "views/about";
+
+/**
+ * COMPONENTS
+ */
+
+@import "components/button.spinner";
+@import "components/show.more";
+@import "components/loader.pane";
+@import "components/navbar.transparent";
+
+@import 'bower_components/IonicSlideBoxTabs/src/scss/slidingTabs';
+@import 'bower_components/ionic-filter-bar/scss/ionic.filter.bar';
